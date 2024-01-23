@@ -32,6 +32,7 @@ export const ProjectEdit = ({ isEditMode, projectData, onSave }) => {
       ...formData,
       [e.target.name]: e.target.value
     })
+    console.log(formData)
   }
 
   /* manejador de eventos para validar los datos del formulario */
@@ -44,6 +45,14 @@ export const ProjectEdit = ({ isEditMode, projectData, onSave }) => {
         text: "Success !",
         duration: 3000
       }).showToast();
+      
+      setFormData({
+        projectManager: managerList[0].name,
+        employee: employeeList[0].name,
+        status: statusList[0].name,
+        name: '',
+        description: '',
+      });
     }
     else {
       Toastify({

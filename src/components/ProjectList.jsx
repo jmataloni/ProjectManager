@@ -16,11 +16,11 @@ export const ProjectList = ({ projects, refreshList }) => {
             deleteDoc(ref, id)
                 .then(() => {"project deleted succesfully"})
                 .catch(() => {"error deletinng project"})
-            refreshList()
         }
         catch (error) {
             console.log(error)
         }
+        refreshList()
     }
     
     const StyledHeader = ({ children }) => {
